@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package io.omid.grpc;
+
+option java_package = "io.omid.grpc.blog";
+
+option java_multiple_files = true;
+
+
+message BlogInputDTO {
+  string author_id = 1;
+  string title = 2;
+  string content = 3;
+}
+
+message BlogOutputDTO {
+  string result = 1;
+}
+
+service BlogService {
+  rpc CreateBlog(BlogInputDTO) returns (BlogOutputDTO);
+};

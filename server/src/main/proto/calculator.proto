@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package io.omid.grpc;
+
+option java_package = "io.omid.grpc";
+
+option java_multiple_files = true;
+
+message SquareRootRequest{
+  int32 number = 1;
+}
+
+message SquareRootResponse{
+  double number_root = 1;
+}
+
+service CalculatorService {
+
+  //  error handling
+  rpc SquareRoot(SquareRootRequest) returns (SquareRootResponse);
+}
